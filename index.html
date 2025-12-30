@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="DAK Detailing — Mobile Paint Correction & Ceramic Coatings serving Danville, San Ramon, Walnut Creek, Dublin, and the Tri-Valley." />
+  <meta name="theme-color" content="#0b0f17" />
+
+  <meta property="og:title" content="DAK Detailing — Paint Correction & Ceramic Coatings" />
+  <meta property="og:description" content="Mobile paint correction and ceramic coatings in the Tri-Valley. Restore gloss, remove swirls, protect your finish." />
+  <meta property="og:type" content="website" />
+
+  <title>DAK Detailing | Paint Correction & Ceramic Coatings</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+  <!-- Top Notice -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <span class="pill">Mobile Service</span>
+      <span class="topbar__text">Serving Danville • San Ramon • Walnut Creek • Dublin • Tri-Valley</span>
+      <a class="topbar__link" href="#booking">Book Now</a>
+    </div>
+  </div>
+
+  <!-- Nav -->
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="DAK Detailing home">
+        <span class="brand__mark">DAK</span>
+        <span class="brand__text">Detailing</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul class="nav__list" id="navList">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#gallery">Results</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a class="btn btn--sm btn--primary" href="#booking">Get a Quote</a></li>
+          <li>
+            <button class="btn btn--sm btn--ghost" id="themeToggle" aria-label="Toggle dark mode">
+              <span id="themeIcon" aria-hidden="true">🌙</span>
+              <span class="sr-only">Toggle theme</span>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main>
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__copy">
+          <div class="hero__badge">
+            <span class="dot"></span> Now booking paint correction & coatings
+          </div>
+          <h1>Restore gloss. Remove swirls. <span class="gradient">Protect your finish.</span></h1>
+          <p class="lead">
+            DAK Detailing specializes in <strong>paint correction</strong> and <strong>ceramic coatings</strong> for daily drivers and performance cars.
+            Mobile service across the Tri-Valley.
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#booking">Get a Quote</a>
+            <a class="btn btn--ghost" href="#pricing">Estimate Pricing</a>
+          </div>
+
+          <div class="hero__stats">
+            <div class="stat">
+              <div class="stat__num">2-Step</div>
+              <div class="stat__label">Correction Specialists</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num">Mobile</div>
+              <div class="stat__label">We come to you</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num">Tri-Valley</div>
+              <div class="stat__label">Danville → Dublin</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__card">
+          <div class="card">
+            <div class="card__header">
+              <h2>Quick Estimate</h2>
+              <p class="muted">Answer 3 questions. Get a range instantly.</p>
+            </div>
+
+            <div class="card__body">
+              <div class="formgrid">
+                <label class="field">
+                  <span>Vehicle Type</span>
+                  <select id="estVehicle">
+                    <option value="sedan">Sedan / Coupe</option>
+                    <option value="suv">SUV / Crossover</option>
+                    <option value="large">Large SUV / Truck</option>
+                  </select>
+                </label>
+
+                <label class="field">
+                  <span>Condition</span>
+                  <select id="estCondition">
+                    <option value="light">Light swirls</option>
+                    <option value="moderate">Moderate swirls</option>
+                    <option value="heavy">Heavy defects</option>
+                  </select>
+                </label>
+
+                <label class="field">
+                  <span>Package</span>
+                  <select id="estPackage">
+                    <option value="oneStep">1-Step Enhancement</option>
+                    <option value="twoStep">2-Step Paint Correction</option>
+                    <option value="coat">Correction + Ceramic Coating</option>
+                  </select>
+                </label>
+
+                <label class="field field--checkbox">
+                  <input id="estInterior" type="checkbox" />
+                  <span>Add interior detail</span>
+                </label>
+
+                <button class="btn btn--primary" id="estBtn" type="button">Calculate</button>
+              </div>
+
+              <div class="estimate" id="estimateBox" aria-live="polite">
+                <div class="estimate__price" id="estimatePrice">$—</div>
+                <div class="estimate__note" id="estimateNote">Ranges depend on condition and paint hardness.</div>
+              </div>
+
+              <div class="tiny muted">
+                Tip: For best results, coatings are paired with correction so defects aren’t sealed in.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__fade"></div>
+    </section>
+
+    <!-- Services -->
+    <section class="section" id="services">
+      <div class="container">
+        <div class="section__head">
+          <h2>Services</h2>
+          <p class="muted">High-impact transformations, done correctly — prep, correction, protection.</p>
+        </div>
+
+        <div class="cards">
+          <article class="service">
+            <h3>1-Step Enhancement</h3>
+            <p>Boost gloss and reduce light swirls. Great for newer cars or quick refreshes.</p>
+            <ul class="checklist">
+              <li>Wash + decon</li>
+              <li>Single-stage polish</li>
+              <li>Sealant protection</li>
+            </ul>
+          </article>
+
+          <article class="service">
+            <h3>2-Step Paint Correction</h3>
+            <p>Our core service. Major swirl removal and sharp reflection clarity.</p>
+            <ul class="checklist">
+              <li>Compound + polish</li>
+              <li>Paint refinement</li>
+              <li>Sealant included</li>
+            </ul>
+          </article>
+
+          <article class="service">
+            <h3>Ceramic Coatings</h3>
+            <p>Long-lasting protection with deep gloss and easier maintenance.</p>
+            <ul class="checklist">
+              <li>2–5 year options</li>
+              <li>Hydrophobic behavior</li>
+              <li>Optional wheels/glass</li>
+            </ul>
+          </article>
+
+          <article class="service">
+            <h3>Exterior Detail (Wash & Protect)</h3>
+            <p>Controlled detailing — perfect for maintenance and as a first step before correction.</p>
+            <ul class="checklist">
+              <li>Safe wash method</li>
+              <li>Wheel & tire clean</li>
+              <li>Spray sealant</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="callout">
+          <div>
+            <h3>Mobile setup</h3>
+            <p class="muted">If you have a driveway + access to water/power, we can work. If not, we’ll coordinate options.</p>
+          </div>
+          <a class="btn btn--primary" href="#booking">Request Availability</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="section section--alt" id="pricing">
+      <div class="container">
+        <div class="section__head">
+          <h2>Pricing</h2>
+          <p class="muted">Transparent base pricing. Final quote depends on paint condition & vehicle size.</p>
+        </div>
+
+        <div class="pricing">
+          <div class="pricecard">
+            <h3>1-Step Enhancement</h3>
+            <div class="price">$699</div>
+            <p class="muted">Best for light swirls & gloss boost.</p>
+            <ul class="checklist">
+              <li>Wash + decon</li>
+              <li>1-step polish</li>
+              <li>Sealant protection</li>
+            </ul>
+            <a class="btn btn--ghost" href="#booking">Book</a>
+          </div>
+
+          <div class="pricecard pricecard--featured">
+            <div class="tag">Most Popular</div>
+            <h3>2-Step Paint Correction</h3>
+            <div class="price">$1,399</div>
+            <p class="muted">The best value transformation.</p>
+            <ul class="checklist">
+              <li>Compound + polish</li>
+              <li>Paint refinement</li>
+              <li>Sealant included</li>
+            </ul>
+            <a class="btn btn--primary" href="#booking">Get Quote</a>
+          </div>
+
+          <div class="pricecard">
+            <h3>Correction + Ceramic</h3>
+            <div class="price">$2,499–$3,199</div>
+            <p class="muted">Long-term protection + max gloss.</p>
+            <ul class="checklist">
+              <li>Multi-step correction</li>
+              <li>2–5 year coating options</li>
+              <li>Aftercare guidance</li>
+            </ul>
+            <a class="btn btn--ghost" href="#booking">Get Quote</a>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="split">
+          <div>
+            <h3>Add-Ons</h3>
+            <p class="muted">These increase results and longevity — easy to add at booking.</p>
+            <div class="addons">
+              <div class="addon"><span>Headlight restoration</span><strong>$149</strong></div>
+              <div class="addon"><span>Trim restore</span><strong>$99–$199</strong></div>
+              <div class="addon"><span>Interior detail</span><strong>$249–$299</strong></div>
+              <div class="addon"><span>Wheel coating</span><strong>$299</strong></div>
+            </div>
+          </div>
+
+          <div class="note">
+            <h3>What’s included in a quote?</h3>
+            <ul class="checklist">
+              <li>Vehicle size + paint condition</li>
+              <li>Desired correction level</li>
+              <li>Coating option & surfaces</li>
+              <li>Scheduling + mobile setup</li>
+            </ul>
+            <a class="btn btn--primary" href="#booking">Request a Quote</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section" id="gallery">
+      <div class="container">
+        <div class="section__head">
+          <h2>Results</h2>
+          <p class="muted">Replace these placeholders with your real before/after photos in <code>assets/img</code>.</p>
+        </div>
+
+        <div class="gallery" id="galleryGrid">
+          <!-- Placeholders (no external images needed) -->
+          <button class="gitem" data-title="Before/After — Gloss Restore" data-color="blue" aria-label="Open image 1">
+            <span class="gitem__ph">Before / After</span>
+            <span class="gitem__sub">Gloss restore</span>
+          </button>
+          <button class="gitem" data-title="Before/After — Swirl Removal" data-color="purple" aria-label="Open image 2">
+            <span class="gitem__ph">Swirls</span>
+            <span class="gitem__sub">2-step correction</span>
+          </button>
+          <button class="gitem" data-title="Ceramic Coating — Hydrophobic" data-color="green" aria-label="Open image 3">
+            <span class="gitem__ph">Ceramic</span>
+            <span class="gitem__sub">2–5 year protection</span>
+          </button>
+          <button class="gitem" data-title="Detail — Wash & Protect" data-color="orange" aria-label="Open image 4">
+            <span class="gitem__ph">Clean</span>
+            <span class="gitem__sub">Wash & protect</span>
+          </button>
+          <button class="gitem" data-title="Close-ups — Reflection Clarity" data-color="pink" aria-label="Open image 5">
+            <span class="gitem__ph">Reflections</span>
+            <span class="gitem__sub">Clarity upgrade</span>
+          </button>
+          <button class="gitem" data-title="Wheels — Clean & Dressed" data-color="cyan" aria-label="Open image 6">
+            <span class="gitem__ph">Wheels</span>
+            <span class="gitem__sub">Finishing touches</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section section--alt" id="reviews">
+      <div class="container">
+        <div class="section__head">
+          <h2>Reviews</h2>
+          <p class="muted">As you get clients, paste real Google review snippets here.</p>
+        </div>
+
+        <div class="reviews">
+          <figure class="review">
+            <blockquote>“Paint looks brand new. The reflection clarity is insane.”</blockquote>
+            <figcaption>— Client, Walnut Creek</figcaption>
+          </figure>
+          <figure class="review">
+            <blockquote>“Very professional. On time, clean setup, and great communication.”</blockquote>
+            <figcaption>— Client, San Ramon</figcaption>
+          </figure>
+          <figure class="review">
+            <blockquote>“Swirls are gone and the coating makes washes effortless.”</blockquote>
+            <figcaption>— Client, Danville</figcaption>
+          </figure>
+        </div>
+
+        <div class="callout">
+          <div>
+            <h3>Leave a review</h3>
+            <p class="muted">Reviews help a local business show up on Google. Thank you.</p>
+          </div>
+          <a class="btn btn--primary" href="#" id="reviewLinkBtn">Open Review Link</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <div class="section__head">
+          <h2>FAQ</h2>
+          <p class="muted">Quick answers to common questions.</p>
+        </div>
+
+        <div class="faq" id="faqList">
+          <button class="faq__q" aria-expanded="false">
+            How long does a 2-step correction take?
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__a">
+            Most vehicles take about 6–8 hours depending on paint condition and size.
+          </div>
+
+          <button class="faq__q" aria-expanded="false">
+            What do I need for a mobile appointment?
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__a">
+            Ideally a driveway with access to water and power. If you don’t have that, we’ll coordinate options.
+          </div>
+
+          <button class="faq__q" aria-expanded="false">
+            Do you do full detailing too?
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__a">
+            Yes — we offer controlled exterior detailing (Wash & Protect) and interior add-ons. Our specialty is paint correction & coatings.
+          </div>
+
+          <button class="faq__q" aria-expanded="false">
+            Can you coat a car without correction?
+            <span class="faq__icon">+</span>
+          </button>
+          <div class="faq__a">
+            You can, but it will lock in existing defects. For best results, we recommend correction before coating.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Booking -->
+    <section class="section section--alt" id="booking">
+      <div class="container">
+        <div class="section__head">
+          <h2>Request a Quote</h2>
+          <p class="muted">Fill this out and you’ll get a reply with availability + a recommended package.</p>
+        </div>
+
+        <div class="booking">
+          <form class="form" id="quoteForm">
+            <div class="form__row">
+              <label class="field">
+                <span>Your Name</span>
+                <input type="text" id="qName" placeholder="First + last" required />
+              </label>
+
+              <label class="field">
+                <span>Phone</span>
+                <input type="tel" id="qPhone" placeholder="(925) 555-1234" required />
+              </label>
+            </div>
+
+            <div class="form__row">
+              <label class="field">
+                <span>Vehicle(s)</span>
+                <input type="text" id="qVehicle" placeholder="e.g., 2018 Mercedes GLE 43 AMG" required />
+              </label>
+
+              <label class="field">
+                <span>City</span>
+                <input type="text" id="qCity" placeholder="Danville / San Ramon / Walnut Creek / Dublin" required />
+              </label>
+            </div>
+
+            <label class="field">
+              <span>What do you want done?</span>
+              <select id="qService" required>
+                <option value="" selected disabled>Select</option>
+                <option>Exterior Detail (Wash & Protect)</option>
+                <option>1-Step Enhancement</option>
+                <option>2-Step Paint Correction</option>
+                <option>Correction + Ceramic Coating</option>
+                <option>Interior Detail Add-On</option>
+                <option>Multi-Vehicle Package</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>Condition / Notes</span>
+              <textarea id="qNotes" rows="4" placeholder="Swirls, scratches, oxidation, garage/outdoor parking, timeline, etc."></textarea>
+            </label>
+
+            <div class="form__actions">
+              <button class="btn btn--primary" type="submit">Send Request</button>
+              <button class="btn btn--ghost" type="button" id="copySummaryBtn">Copy Summary</button>
+            </div>
+
+            <p class="tiny muted">
+              This form opens your email app with a pre-filled message (no backend required).
+              If you want a real hosted form later, use Formspree or Netlify Forms.
+            </p>
+          </form>
+
+          <aside class="contactcard">
+            <h3>Contact</h3>
+            <p class="muted">Fastest response: text or DM.</p>
+
+            <div class="contactcard__item">
+              <span class="label">Instagram</span>
+              <a href="#" id="igLink">@dakdetailing</a>
+            </div>
+
+            <div class="contactcard__item">
+              <span class="label">TikTok</span>
+              <a href="#" id="ttLink">@dakdetailing</a>
+            </div>
+
+            <div class="contactcard__item">
+              <span class="label">Service Area</span>
+              <span>Danville • San Ramon • Walnut Creek • Dublin</span>
+            </div>
+
+            <div class="map">
+              <iframe
+                title="Tri-Valley service area map"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=Danville,+CA&output=embed">
+              </iframe>
+            </div>
+
+            <div class="contactcard__cta">
+              <a class="btn btn--primary" href="#top">Back to top</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <div class="lightbox__backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox__panel" role="dialog" aria-modal="true" aria-label="Image preview">
+      <div class="lightbox__head">
+        <div class="lightbox__title" id="lightboxTitle">Preview</div>
+        <button class="btn btn--sm btn--ghost" id="lightboxClose" aria-label="Close">✕</button>
+      </div>
+      <div class="lightbox__body">
+        <div class="lightbox__ph" id="lightboxPh">Add your photo here later</div>
+        <p class="tiny muted">Tip: Replace placeholders with your real before/after photos in <code>assets/img</code>.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <div class="brand brand--footer">
+          <span class="brand__mark">DAK</span><span class="brand__text">Detailing</span>
+        </div>
+        <p class="tiny muted">© <span id="year"></span> DAK Detailing. Mobile paint correction & ceramic coatings.</p>
+      </div>
+
+      <div class="footer__links">
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#booking">Quote</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
