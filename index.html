@@ -666,11 +666,13 @@
       <div class="hr"></div>
 
       <div class="grid" style="grid-template-columns: 1fr;">
-        </div>
-      </div>
-    </div>
+  <div class="card">
+    <h3 style="margin:0 0 6px;">Pro tip for photos</h3>
+    <p class="muted" style="margin:0;">Shoot the same panel, same angle, same lighting. Use direct sunlight or a strong garage light. Close-ups of swirls + a wide shot for gloss sells best.</p>
+  </div>
+</div>
+</div>
   </section>
-
   <!-- FAQs -->
   <section id="faqs">
     <div class="container">
@@ -718,7 +720,9 @@
 
       <div class="contact-grid">
         <div class="card">
-          <form class="form" action="mailto:dakdetail@gmail.com" method="post" enctype="text/plain">
+          <form class="form" action="https://formspree.io/f/mreekwgk" method="POST">
+          <input type="hidden" name="_subject" value="New DAK Detailing Quote Request" />
+          <input type="hidden" name="_format" value="plain" />
             <div class="inline">
               <div>
                 <label for="name">Name</label>
@@ -815,5 +819,32 @@
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
+  <script>
+  const form = document.querySelector("form.form");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+
+    const res = await fetch(form.action, {
+      method: "POST",
+      body: data,
+      headers: { "Accept": "application/json" }
+    });
+
+    if (res.ok) {
+      form.innerHTML = `
+        <div class="card" style="margin:0; background: rgba(0,0,0,0.22);">
+          <h3 style="margin:0 0 6px;">Request sent ✅</h3>
+          <p class="muted" style="margin:0;">Got it. We’ll text you back ASAP. If you want faster booking, text photos of the paint.</p>
+          <div class="pill-row" style="margin-top:12px;">
+            <a class="btn primary" href="sms:+19257917799">Text Photos</a>
+            <a class="btn" href="tel:+19257917799">Call</a>
+          </div>
+        </div>`;
+    } else {
+      alert("Something went wrong. Please text us instead.");
+    }
+  });
+</script>
 </body>
 </html>
