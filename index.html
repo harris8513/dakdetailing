@@ -844,16 +844,9 @@
     });
 
     if (res.ok) {
-      form.innerHTML = `
-        <div class="card" style="margin:0; background: rgba(0,0,0,0.22);">
-          <h3 style="margin:0 0 6px;">Request sent ✅</h3>
-          <p class="muted" style="margin:0;">Got it. We’ll text you back ASAP. If you want faster booking, text photos of the paint.</p>
-          <div class="pill-row" style="margin-top:12px;">
-            <a class="btn primary" href="sms:+19257917799">Text Photos</a>
-            <a class="btn" href="tel:+19257917799">Call</a>
-          </div>
-        </div>`;
-    } else {
+  window.location.href = "/thank-you.html";
+}
+ else {
       alert("Something went wrong. Please text us instead.");
     }
   });
